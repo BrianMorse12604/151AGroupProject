@@ -35,7 +35,6 @@ After this process, our data has 168414 entries with 16 fields. This preserved 6
 To ensure only numerical data: All the columns that have t/f, we converted to binary 1/0. All columns with categorical variables, with the exception of amenities, we one-hot encoded. This is "property_type", "room_type", "city". We only included the top 100 amenities. 
 
 #### Normalizing the Data
-(if you change how we normalized the data, please update this portion)
 From a boxplot of the nonbinary features, we found that features such as 'host_total_listings_count,' 'price,' 'minimum_nights,' and 'maximum_nights' have extreme outliers that we can drop. We will drop the first 10 outliers of the previously notable features mentioned. We have opted not to employ the IQR method since it would excessively constrain our dataset.
 
 After dropping these outliers, we normalized the data.
