@@ -5,7 +5,7 @@ Data can be found on [kaggle](https://www.kaggle.com/datasets/mysarahmadbhat/air
 
 This dataset uses a public domain license described here: [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/). Based on this license, we are free to copy, modify, distribute and perform the work without asking permission. 
 
-Objective: We are building a model to predict an Airbnb's review rating based on other factors.  
+Objective: We are building a model to predict an Airbnb's review rating.  
 
 ## Data Exploration and Initial Preprocessing (Milestone 2)
 
