@@ -65,7 +65,7 @@ Our final reduced Ridge Regression model produced validation, training, and test
 
 ![Fitting Curve for Regression](images/regression_error_plotting.png)
 
-The error plotting has to be in log to try to plot all the points in the graph, but it is clear that after the first drop in validation error that none of the error significantly changed for the better or worse, but made very marginal improvement, confirming the analysis above
+The error plotting has to be in log to try to plot all the points in the graph, but it is clear that after the first drop in validation error that none of the error significantly changed for the better or worse, but made very marginal improvement, confirming the analysis above. The model number label on the x-axis essentially describes the separation of the three major sections of progress with regression, model 0 being the standard linear regression, model 1 being the ridge regression, and model 2 being the regression that has some polynomial features and recursive feature elimination applied to it.
 
 #### Conclusion and Next Steps 
 Upon exploring a Linear Regression model, we came to the conclusion that Linear Regression is not sufficient for predicting Airbnb's review rating given our dataset. This is demonstrated in both our initial Linear Regression model and our improved reduced Ridge Regression Model. Although consistent, our final model still produced high error values, indicating it was not accurately predicting the rating reviews. 
