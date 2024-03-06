@@ -76,6 +76,8 @@ One possible area of improvement for this regression model includes further inve
 
 The next two models we are thinking of doing are neural networks and decision regression trees. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. These more complicated models have automatic feature learning and can recognize nonlinear relationships between data. Therefore, compared to a traditional regression model that performs well with linear data relationships, our future models may be able to recognize underlying patterns and fit the data more, thus decreasing the final error.
 
+## Second Model - Decision Tree Regressor (Milestone 4) 
 
+### Part 1: Evaluating data, labels, and loss function
 
 
