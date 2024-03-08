@@ -1,5 +1,9 @@
 # 151AGroupProject
 
+## Abstract
+
+Airbnb is one of the largest short-term rental booking sites and a rental’s ratings can be instrumental in determining its profitability. As such, many hosts would like to know how a potential rental location may perform before they purchase it or how they can make improvements to current locations. Our goal is to create a predictive model that takes into account information about a rental location to predict the overall rating. We will use a regression model with features such as the number of rooms, the price of the listing, and the city of the listing that will predict the overall rating for the location. We will further process and transform the data to create new features in hopes of strengthening our predictions. We will explore various types of regression models including but not limited to linear regression, ridge regression, decision tree / random forests, and neural networks to determine which type of model best fits and predicts the data. By doing so, we hope to create a useful tool for hosts to use when making decisions about a listing.
+
 Overview of Data: 
 Data can be found on [kaggle](https://www.kaggle.com/datasets/mysarahmadbhat/airbnb-listings-reviews). We are using the 'Listings.csv' data and the corresponding 'Listings_data_dictionary.csv', which is just a dictionary describing all the fields in Listings.csv. 
 
