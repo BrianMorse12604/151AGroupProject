@@ -84,4 +84,32 @@ The next two models we are thinking of doing are neural networks and decision re
 
 ### Part 1: Evaluating data, labels, and loss function
 
+We felt that our data, labels, and loss functions were all sufficient. We knew that regression models are more simple models that often struggle with identifying nonlinear relationships, so we were pleasantly surprised to see the MSE hover around 90 – suggesting an average error around 9-10 / 100. Our data is extensive both in terms of observations and features, so we were excited to get into more complex models that could model relationships that could be harder to notice.
 
+### Part 2: Train your second model
+
+We began with decision tree regressors and random forest regressors. We then used both XGBoost and scikit-learn’s libraries for gradient boosting regressors. Fitting each model was relatively quick, finishing in ~10 minutes.
+
+### Part 3: Evaluate the Model
+
+We decided to use the gradient boosting regression model from the XGBoost library, as it performed slightly better than both the decision tree regressor and the random forest regressor.
+Our best gradient boosting model overfits slightly, with a training MSE of 68 and testing/validation MSE’s hovering in the mid-80’. However, as the result of an exhaustive grid search, we have confidence that these hyperparameters are pretty optimal, as they outperformed models that didn’t overfit and had similar training and testing errors. l Tweaking the “num_estimators” and “depth” hyperparameters had the largest impact on mitigating overfitting: we were able to bring the training MSE down to a single digit, at the cost of doubling our training/validation MSE’s by building an overly complex model with high depth.
+
+### Part 4: Where does the model fit in the fitting graph?
+
+![Fitting Curve for Regression](images/XGBoost_plotting.png)
+
+Our XGBoost model had training, testing, and validation errors were roughly 68.5, 86.3, and 84.8 respectively. Looking at our XGBoost RMSE graph, our model overfits slightly as the final training and testing RMSE has a decent difference. However, the error on both our test and validation data is not yet in the area of the fitting graph where it is starting to rise as the training RMSE continues to fall. Therefore, we can conclude that our model falls roughly in the ideal range for model complexity.
+
+### Part 5: Hyperparameter tuning, K-fold cross-validation, feature expansion
+
+We did not perform feature expansion, as we felt confident that our feature engineering in the preprocessing stage was effective. We did perform both hyperparameter tuning and K-Fold cross validation using the GridSearchCV function. Though the grid search did find slightly more optimal errors in comparison to our models without hyperparameter tuning, we weren’t blown away by the results. 
+We ran trials using a different number of folds during our grid search, and found that the difference in results was only marginal, while each search took an order of magnitude longer. Therefore, we opted to gridsearch with only two folds each time we used it, using the second fold to sanity-check the results of the first. 
+
+### Part 6: Plan for the next model
+
+For our next model, we were planning to test various types of neural networks. We saw that several neural networks performed well on similar tasks in our recent homework, so we felt that it would be interesting to see if that translated to this task as well. We plan on starting out with a simple Multi-layer perceptron, then experimenting with ANN’s and DNN’s with varying depths, activation functions, and number of neurons.
+
+### Part 7: Model 2 Conclusion
+
+Our second model only improved marginally upon our first model. This family of models – the trees – had a tendency to overfit on the training data, which made sense given the complexity of each of these models. We think that these different models performing relatively similar to one another is indicative of the variance in our dataset; people, and therefore AirBNB ratings, are inherently volatile. We think that there’s a possibility that more hyperparameter tuning can decrease the error slightly, but we’re not overly hopeful that this is the case given the similar performance across the board.
