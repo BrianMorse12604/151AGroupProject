@@ -82,6 +82,8 @@ The next two models we are thinking of doing are neural networks and decision re
 
 ## Second Model - Decision Tree Regressor (Milestone 4) 
 
+This is the link to the our notebook for our [tree models](https://github.com/BrianMorse12604/151AGroupProject/blob/main/trees.ipynb) linked in this github. 
+
 ### Part 1: Evaluating data, labels, and loss function
 
 We felt that our data, labels, and loss functions were all sufficient. We knew that regression models are more simple models that often struggle with identifying nonlinear relationships, so we were pleasantly surprised to see the MSE hover around 90 – suggesting an average error around 9-10 / 100. Our data is extensive both in terms of observations and features, so we were excited to get into more complex models that could model relationships that could be harder to notice.
