@@ -21,19 +21,24 @@ Objective: We are building 3 ML models to predict an Airbnb's review rating.
 
 ## Figures
 
-The following figures are for data visualization purposes, and to get a better sense of the data
+### Data Visualization Figures
+The following figures 1.1, 1.2, 1.3 are for data visualization purposes, and to get a better sense of the data
 
-[Figure 1.1](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#data-visualization): This figure is described more thoroughly at the link, but gives the correlation between different features of the data.
+[Figure 1.1](https://github.com/BrianMorse12604/151AGroupProject?tab=readme-ov-file#data-visualization): This figure is described more thoroughly at the link, but gives the correlation between different features of the data.
 ![151a_correlation_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e985ecb3-a7f3-4d16-b394-caac5080e3e8)
 
-[Figure 1.2](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#data-visualization): This figure is described more thoroughly at the link, but compares price against rating for each location.
+[Figure 1.2](https://github.com/BrianMorse12604/151AGroupProject?tab=readme-ov-file#data-visualization): This figure is described more thoroughly at the link, but compares price against rating for each location.
 ![151a_pricevshost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e1840db3-7314-4cca-8765-731cb08437ce)
 
-[Figure 1.3]([url](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#data-visualization)): This figure is described more thoroughly at the link, but looks at the distribution of ratings based on whether the host is a host or superhost.
-
+[Figure 1.3](https://github.com/BrianMorse12604/151AGroupProject?tab=readme-ov-file#data-visualization): This figure is described more thoroughly at the link, but looks at the distribution of ratings based on whether the host is a host or superhost.
 ![151a_superhost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/69629b7b-9401-4762-8e7c-81d5118ccc1f)
 
-## Data Exploration and Initial Preprocessing (Milestone 2)
+### Figures Describing Model Performance
+
+[Figure 2.1](images/regression_error_plotting.png):
+
+## Methods
+### Data Exploration and Initial Preprocessing (Milestone 2)
 
 Overview of Data: 
 The dataset we used can be found on [kaggle](https://www.kaggle.com/datasets/mysarahmadbhat/airbnb-listings-reviews). We are using the 'Listings.csv' data and the corresponding 'Listings_data_dictionary.csv', which is just a dictionary describing all the fields in Listings.csv. 
@@ -79,43 +84,39 @@ To get a better sense of the data:
 
 3. [Figure 1.3](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#figures): Since being a superhost was found to be our strongest correlating factor, we plotted the distribution of ratings based on superhost against the rating. We found that if the host is a superhost, the ratings are much more skewed to have a higher concentration among the 90-100% rating. Similarly, if the host is not a super host it is seen that they have slightly more reviews amongst the 20-50% range.
 
-## First Model - Regression (Milestone 3) 
+### Preprocessing Data
+The preprocessing beyond normalization is different from each model. For clarity, we put this in the description of each model: 
+
+[Preprocessing for Model 1](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#preprocessing-for-model-1)
+
+Preprocessing for Model 2
+
+Preprocessing for Model 3
+
+### First Model - Regression (Milestone 3) 
 This is the link to the our notebook for our [regression model](https://github.com/BrianMorse12604/151AGroupProject/blob/main/regression.ipynb) linked in this github. 
 
-
-#### Preprocessing for our Model  
+#### Preprocessing for Model 1  
 In this model, the only extra preprocessing we did to add to the work done from the previous milestone was to incorporate polynomial features up to degree three and interactions for all of the features that were not binary. This was done to experiment with the features that may be important beyond simple linearity without causing too many issues since the recursive feature elimination would be able to remove any added columns that were problematic.
 
 We did not add this preprocessing directly to the data that other models would use and instead only saved this preprocessing for our regression in case the other models would not benefit from it. However, the code is written in a function such that it could easily be incorporated for future models if desired.
 
-#### Observation 
-Our first initial model, which consisted of a simple Linear Regression model, produced an extremely high validation error of 1.2e+18 in comparison with its training error of 90.6 (around 10^16 times greater). The difference in validation and training error in combination with extreme coefficient values was a clear sign of overfitting and a failure on the model’s part to understand the true importance of different features. We attempted to fix this issue by implementing a Ridge Regression to counter larger coefficients and reduce the error. The Ridge Regression model produced very similar errors between the validation and training dataset of roughly 88.1 and 90.6 respectively. Although much better than the Linear Regression model, we made one more attempt at improving the model by using feature transformation to consider polynomial features and feature removal to remove unnecessary and non-impactful features. However, this ultimately did not improve the model as we had hoped, and our new reduced Ridge Regression model ended up producing very similar errors as the previous Ridge Regression model, 87.7 and 90.1 respectively. Following the training and finalization of our model, we tested the reduced Ridge Regression model on the testing dataset and it produced an error of 90.6.
+#### Process for Constructing Model 1 
+Our first initial model, which consisted of a simple Linear Regression model, produced an extremely high validation error of 1.2e+18 in comparison with its training error of 90.6 (around 10^16 times greater). The difference in validation and training error in combination with extreme coefficient values was a clear sign of overfitting and a failure on the model’s part to understand the true importance of different features. 
 
-#### Fitting Graph 
-Our final reduced Ridge Regression model produced validation, training, and testing errors of roughly 87.7, 90.1, and 90.6 respectively. We can observe that all of the errors are relatively close together, leading us to conclude that we are no longer overfitting, but may be underfitting the data due to the high error values. In terms of where we are on the graph, we are on the left side before the ideal range for model complexity, with a simple model and high predictive errors. We also noticed that the validation error never seemed to increase at all as we increased the model complexity, further indicating that we were before the ideal range for model complexity.
+We attempted to fix this issue by implementing a Ridge Regression to counter larger coefficients and reduce the error. The Ridge Regression model produced very similar errors between the validation and training dataset of roughly 88.1 and 90.6 respectively. Although much better than the Linear Regression model, we made one more attempt at improving the model by using feature transformation to consider polynomial features and feature removal to remove unnecessary and non-impactful features. However, this ultimately did not improve the model as we had hoped, and our new reduced Ridge Regression model ended up producing very similar errors as the previous Ridge Regression model, 87.7 and 90.1 respectively. 
 
-![Fitting Curve for Regression](images/regression_error_plotting.png)
+Following the training and finalization of our model, we tested the reduced Ridge Regression model on the testing dataset and it produced an error of 90.6. 
 
-The error plotting has to be in log to try to plot all the points in the graph, but it is clear that after the first drop in validation error that none of the error significantly changed for the better or worse, but made very marginal improvement, confirming the analysis above. The model number label on the x-axis essentially describes the separation of the three major sections of progress with regression, model 0 being the standard linear regression, model 1 being the ridge regression, and model 2 being the regression that has some polynomial features and recursive feature elimination applied to it.
+Our first final model we constructured was a Ridge Regression model. 
 
-#### Conclusion and Next Steps 
-Upon exploring a Linear Regression model, we came to the conclusion that Linear Regression is not sufficient for predicting Airbnb's review rating given our dataset. This is demonstrated in both our initial Linear Regression model and our improved reduced Ridge Regression Model. Although consistent, our final model still produced high error values, indicating it was not accurately predicting the rating reviews. 
+In order to visualize the performance of this model, we constructed a fitting graph here, which is [figure 2.1](https://github.com/BrianMorse12604/151AGroupProject/edit/main/README.md#figures-describing-model-performance). A detailed analysis will be in our results and discussion section.
 
-
-One possible area of improvement for this regression model includes further investigation into the importance of each of the features and their relationships with each other to see what the best subset of features truly is to limit the error, but currently, it seems like most changes would not be significant for this model’s improvement and that it would most likely only make a small decrease.
-
-
-The next two models we are thinking of doing are neural networks and decision regression trees. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. These more complicated models have automatic feature learning and can recognize nonlinear relationships between data. Therefore, compared to a traditional regression model that performs well with linear data relationships, our future models may be able to recognize underlying patterns and fit the data more, thus decreasing the final error.
-
-## Second Model - Decision Tree Regressor (Milestone 4) 
+### Second Model - Decision Tree Regressor (Milestone 4) 
 
 This is the link to the our notebook for our [tree models](https://github.com/BrianMorse12604/151AGroupProject/blob/main/trees.ipynb) linked in this github. 
 
-### Part 1: Evaluating data, labels, and loss function
-
-We felt that our data, labels, and loss functions were all sufficient. We knew that regression models are more simple models that often struggle with identifying nonlinear relationships, so we were pleasantly surprised to see the MSE hover around 90 – suggesting an average error around 9-10 / 100. Our data is extensive both in terms of observations and features, so we were excited to get into more complex models that could model relationships that could be harder to notice.
-
-### Part 2: Train your second model
+#### process for Constructing Model 2
 
 We began with decision tree regressors and random forest regressors. We then used both XGBoost and scikit-learn’s libraries for gradient boosting regressors. Fitting each model was relatively quick, finishing in ~10 minutes.
 
