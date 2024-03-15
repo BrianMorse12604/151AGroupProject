@@ -313,7 +313,7 @@ After the entire process of working with this Airbnb data across three different
 
 ## Contributions:
 * Arvin Zhang:
-  * Title/Contribution:
+  * Title/Contribution: Group Member, Contributed to the abstract (Milestone 1), Data preprocessing steps (Milestone 2), and analysis/write up of Model 1 (Milestone 3). In the abstract, helped select dataset and summarize data. Most significant contributions in the data preprocessing step includes normalizing the data, visualizing the data, and removing select possible outliers during the data preprocessing steps. Finally, worked with Brian and Josh to analyze and draw conclusions on Model 1;s performance. 
 * Andrew Pu:
   * Title/Contribution:
 * Andrew Zheng:
