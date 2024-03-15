@@ -101,7 +101,13 @@ We ran trials using a different number of folds during our grid search, and foun
 
 ### Third Model - Dense Neural Networks (Milestone 5)
 
+No further data preprocessing needed.
 
+#### Evolution of the Model:
+
+We started by creating a preliminary dense neural network using relu activation functions and two hidden layers. We then performed hyperparameter tuning where we varied the activation function, the number of layers, the number of nodes per layer, the optimizer, and the learning rate. Using the most optimal combination of these values from our hyperparameter tuning, we created another dense neural network and also implemented early stopping to prevent over-fitting. 
+
+Based on our hypertuning, we found that our most optimal model has the following parameters:activation = elu, hidden_layers = 2, layer_one_nodes = 128, optimizer = adam, learning_rate = 0.09
 
 ## D. Results
 
@@ -133,7 +139,7 @@ The error plotting has to be in log to try to plot all the points in the graph, 
 
 ### Second Model - Decision Tree Regressor 
 
-#### Part 3: Observation
+#### Observation
 
 We decided to use the gradient boosting regression model from the XGBoost library, as it performed slightly better than both the decision tree regressor and the random forest regressor.
 Our best gradient boosting model overfits slightly, with a training MSE of 68 and testing/validation MSE’s hovering in the mid-80’. However, as the result of an exhaustive grid search, we have confidence that these hyperparameters are pretty optimal, as they outperformed models that didn’t overfit and had similar training and testing errors. l Tweaking the “num_estimators” and “depth” hyperparameters had the largest impact on mitigating overfitting: we were able to bring the training MSE down to a single digit, at the cost of doubling our training/validation MSE’s by building an overly complex model with high depth.
@@ -145,6 +151,11 @@ Our best gradient boosting model overfits slightly, with a training MSE of 68 an
 Our XGBoost model had training, testing, and validation errors were roughly 68.5, 86.3, and 84.8 respectively. Looking at our XGBoost RMSE graph, our model overfits slightly as the final training and testing RMSE has a decent difference. However, the error on both our test and validation data is not yet in the area of the fitting graph where it is starting to rise as the training RMSE continues to fall. Therefore, we can conclude that our model falls roughly in the ideal range for model complexity.
 
 ### Third Model - Dense Neural Networks (Milestone 5)
+
+#### Observation
+
+#### Fitting Graph
+
 
 ## E. Discussion
 
@@ -161,7 +172,7 @@ One possible area of improvement for this regression model includes further inve
 
 The next two models we are thinking of doing are decision regression trees and neural networks. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. These more complicated models have automatic feature learning and can recognize nonlinear relationships between data. Therefore, compared to a traditional regression model that performs well with linear data relationships, our future models may be able to recognize underlying patterns and fit the data more, thus decreasing the final error.
 
-### Second Model - Decision Tree Regressor (Milestone 4) 
+### Second Model - Decision Tree Regressor 
 
 #### Part 6: Plan for the next model
 
@@ -171,7 +182,7 @@ For our next model, we were planning to test various types of neural networks. W
 
 Our second model only improved marginally upon our first model. This family of models – the trees – had a tendency to overfit on the training data, which made sense given the complexity of each of these models. We think that these different models performing relatively similar to one another is indicative of the variance in our dataset; people, and therefore AirBNB ratings, are inherently volatile. We think that there’s a possibility that more hyperparameter tuning can decrease the error slightly, but we’re not overly hopeful that this is the case given the similar performance across the board.
 
-### Third Model - Dense Neural Networks (Milestone 5)
+### Third Model - Dense Neural Networks 
 
 
 
