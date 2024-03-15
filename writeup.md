@@ -155,6 +155,7 @@ Our XGBoost model had training, testing, and validation errors were roughly 68.5
 ### Third Model - Dense Neural Networks (Milestone 5)
 
 #### Observation
+For this model, the we implemented early_stopping to avoid the issue of overfitting. Thus, the model stopped after only 23 epochs. Compared to the preliminary model before hypertuning, the validation_error was a little lower, going down to around 91.8 at its minimum before going back up and stopping. The testing error ended up being around 92.1, which is a little better than our model without hypertuning which had a testing error of 93.3.
 
 #### Fitting Graph
 Fitting graph for initial model before hypertuning:
@@ -162,8 +163,6 @@ Fitting graph for initial model before hypertuning:
 
 Fitting graph for model after hypertuning:
 ![Fitting graph for Final Model (hypertuned model)](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e5472132-0299-4add-a81b-c0e810ad7f44)
-
-For this model, the we implemented early_stopping to avoid the issue of overfitting. Thus, the model stopped after only 23 epochs. Compared to the preliminary model before hypertuning, the validation_error was a little lower, going down to around 91.8 at its minimum before going back up and stopping. The testing error ended up being around 92.1, which is a little better than our model without hypertuning which had a  testing error of 93.3.
 
 From these graphs, we can clearly see that for both models, the preliminary one and our final one, the errors started pretty close to each other, but they gradually separated after that, with the training_error consistently decreasing and the validation_error leveling off or even increasing. Since we set restore_best_weights to True, the final testing_loss is pretty close the minimum validation_loss instead of the final validation_loss.
 
