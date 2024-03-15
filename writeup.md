@@ -101,6 +101,8 @@ We ran trials using a different number of folds during our grid search, and foun
 
 ### Third Model - Dense Neural Networks (Milestone 5)
 
+This is the link to the notebook for our [DNN](https://github.com/BrianMorse12604/151AGroupProject/blob/main/DenseNeuralNetwork.ipynb). It is in this github.
+
 No further data preprocessing needed.
 
 #### Evolution of the Model:
