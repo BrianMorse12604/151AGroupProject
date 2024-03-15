@@ -1,15 +1,42 @@
 # 151AGroupProject
 
+The group members in this project are Rachel Wei (rawei@ucsd.edu), Andrew Pu (apu@ucsd.edu), Ethan Cao (etcao@ucsd.edu), idk everyone elses email im too lazy.
+
+This README will explain our 151A group project for Winter 2024. This README contains where to find all the code for this project, as well as the project itself: an introduction to the project, dataset used, a description of our data exploration, cleaning, and preprocessing, and the process for creating the 3 different ML models as well as a comparison between the 3. All the code for this project is uploaded as a jupyter notebook to this github, and will be linked throughout the readme when relevant.
+
 ## A. Abstract
 
-Airbnb is one of the largest short-term rental booking sites and a rental’s ratings can be instrumental in determining its profitability. As such, many hosts would like to know how a potential rental location may perform before they purchase it or how they can make improvements to current locations. Our goal is to create a predictive model that takes into account information about a rental location to predict the overall rating. We will use a regression model with features such as the number of rooms, the price of the listing, and the city of the listing that will predict the overall rating for the location. We will further process and transform the data to create new features in hopes of strengthening our predictions. We will explore various types of regression models including but not limited to linear regression, ridge regression, decision tree / random forests, and neural networks to determine which type of model best fits and predicts the data. By doing so, we hope to create a useful tool for hosts to use when making decisions about a listing.
+Airbnb is one of the largest short-term rental booking sites and a rental’s ratings can be instrumental in determining its profitability. As such, many hosts would like to know how a potential rental location may perform before they purchase it or how they can make improvements to current locations. Our goal is to create a predictive model that takes into account information about a rental location to predict the overall rating. We will use a regression model with features such as the number of rooms, the price of the listing, and the city of the listing that will predict the overall rating for the location. We will further process and transform the data to create new features in hopes of strengthening our predictions.
+
+We will explore 3 ML models:
+
+1. Various linear regression mdoels, in which we pick the model that performed the best.
+2. Various tree-based ML models, in which we pick the model that performed the best.
+3. Various DNN models, in which we pick the model that performed the best.
+
+By creating these models, we hope to create a useful tool for both hosts and customers to use when making decisions about a listing.
+
+Objective: We are building 3 ML models to predict an Airbnb's review rating.
 
 Overview of Data: 
 Data can be found on [kaggle](https://www.kaggle.com/datasets/mysarahmadbhat/airbnb-listings-reviews). We are using the 'Listings.csv' data and the corresponding 'Listings_data_dictionary.csv', which is just a dictionary describing all the fields in Listings.csv. 
 
 This dataset uses a public domain license described here: [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/). Based on this license, we are free to copy, modify, distribute and perform the work without asking permission. 
 
-Objective: We are building a model to predict an Airbnb's review rating. 
+## B. Figures
+
+### Data Visualization Figures
+The following figures 1.1, 1.2, 1.3 are for data visualization purposes, and to get a better sense of the data
+
+[Figure 1.1](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but gives the correlation between different features of the data.
+![151a_correlation_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e985ecb3-a7f3-4d16-b394-caac5080e3e8)
+
+[Figure 1.2](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but compares price against rating for each location.
+![151a_pricevshost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e1840db3-7314-4cca-8765-731cb08437ce)
+
+[Figure 1.3](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but looks at the distribution of ratings based on whether the host is a host or superhost.
+![151a_superhost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/69629b7b-9401-4762-8e7c-81d5118ccc1f)
+
 
 ## C. Methods
 
@@ -36,11 +63,15 @@ After dropping these outliers, we normalized the data.
 #### Data Visualization
 To get a better sense of the data:
 
-1. We first plotted the correlations between different features, specifically the non-categorical fields. We found that the strongest correlation between our intended target class, review_scores_rating, was host_is_superhost. The next 9 features with the strongest correlation to ratings are a variety of amenities relating to food and cooking: Dishes and silverware, Cooking basics, Coffee maker, Refrigerator, Stove, Oven, Hot water, Iron, and Microwave.
+1. Figure 1: We first plotted the correlations between different features, specifically the non-categorical fields. We found that the strongest correlation between our intended target class, review_scores_rating, was host_is_superhost. The next 9 features with the strongest correlation to ratings are a variety of amenities relating to food and cooking: Dishes and silverware, Cooking basics, Coffee maker, Refrigerator, Stove, Oven, Hot water, Iron, and Microwave.
+![151a_correlation_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e985ecb3-a7f3-4d16-b394-caac5080e3e8)
 
-2. We looked at how pricing could potentially affect rating, since we preliminary hypothesized that pricing could be a major indicator of rating. From the scatterplot, we found that there does appear to be less points at the higher end of 'price' and at the lower end of the review rating. We broke this down even more to view price plotted against review by each city. These plots showed us the same pattern, with higher priced Airbnbs having fewer lower ratings.
+2. Figure 1.2: We looked at how pricing could potentially affect rating, since we preliminary hypothesized that pricing could be a major indicator of rating. From the scatterplot, we found that there does appear to be less points at the higher end of 'price' and at the lower end of the review rating. We broke this down even more to view price plotted against review by each city. These plots showed us the same pattern, with higher priced Airbnbs having fewer lower ratings.
+![151a_pricevshost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e1840db3-7314-4cca-8765-731cb08437ce)
 
-3. Since being a superhost was found to be our strongest correlating factor, we plotted the distribution of ratings based on superhost against the rating. We found that if the host is a superhost, the ratings are much more skewed to have a higher concentration among the 90-100% rating. Similarly, if the host is not a super host it is seen that they have slightly more reviews amongst the 20-50% range.
+3. Figure 1.3: Since being a superhost was found to be our strongest correlating factor, we plotted the distribution of ratings based on superhost against the rating. We found that if the host is a superhost, the ratings are much more skewed to have a higher concentration among the 90-100% rating. Similarly, if the host is not a super host it is seen that they have slightly more reviews amongst the 20-50% range.
+![151a_superhost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/69629b7b-9401-4762-8e7c-81d5118ccc1f)
+
 
 ### First Model - Regression (Milestone 3) 
 This is the link to the our notebook for our [regression model](https://github.com/BrianMorse12604/151AGroupProject/blob/main/regression.ipynb) linked in this github. 
@@ -58,20 +89,18 @@ The first step in doing regression was to use do a simple linear regression with
 
 This is the link to the our notebook for our [tree models](https://github.com/BrianMorse12604/151AGroupProject/blob/main/trees.ipynb) linked in this github. 
 
-#### Part 1: Evaluating data, labels, and loss function
-
-We felt that our data, labels, and loss functions were all sufficient. We knew that regression models are more simple models that often struggle with identifying nonlinear relationships, so we were pleasantly surprised to see the MSE hover around 90 – suggesting an average error around 9-10 / 100. Our data is extensive both in terms of observations and features, so we were excited to get into more complex models that could model relationships that could be harder to notice.
-
-#### Part 2: Train your second model
+#### Evolution of the Model: 
 
 We began with decision tree regressors and random forest regressors. We then used both XGBoost and scikit-learn’s libraries for gradient boosting regressors. Fitting each model was relatively quick, finishing in ~10 minutes.
 
-#### Part 5: Hyperparameter tuning, K-fold cross-validation, feature expansion
+#### Hyperparameter tuning, K-fold cross-validation, feature expansion
 
 We did not perform feature expansion, as we felt confident that our feature engineering in the preprocessing stage was effective. We did perform both hyperparameter tuning and K-Fold cross validation using the GridSearchCV function. Though the grid search did find slightly more optimal errors in comparison to our models without hyperparameter tuning, we weren’t blown away by the results. 
+
 We ran trials using a different number of folds during our grid search, and found that the difference in results was only marginal, while each search took an order of magnitude longer. Therefore, we opted to gridsearch with only two folds each time we used it, using the second fold to sanity-check the results of the first. 
 
 ### Third Model - Dense Neural Networks (Milestone 5)
+
 
 
 ## D. Results
@@ -90,7 +119,7 @@ After this process, our data has 168414 entries with 16 fields. This preserved 6
 - minimum_nights and maximum_nights -- we think that this'll add to or subtract from the convenience for the user, leading to correlation with rating
 - instant_bookable -- same as above.
 
-### First Model - Regression (Milestone 3) 
+### First Model - Regression 
 
 #### Observation 
 Our first initial model, which consisted of a simple Linear Regression model, produced an extremely high validation error of 1.2e+18 in comparison with its training error of 90.6 (around 10^16 times greater). The Ridge Regression model produced very similar errors between the validation and training dataset of roughly 88.1 and 90.6 respectively. Although much better than the Linear Regression model, we made one more attempt at improving the model by using feature transformation to consider polynomial features and feature removal to remove unnecessary and non-impactful features. However, this ultimately did not improve the model as we had hoped, and our new reduced Ridge Regression model ended up producing very similar errors as the previous Ridge Regression model, 87.7 and 90.1 respectively. Following the training and finalization of our model, we tested the reduced Ridge Regression model on the testing dataset and it produced an error of 90.6.
@@ -102,14 +131,14 @@ Our final reduced Ridge Regression model produced validation, training, and test
 
 The error plotting has to be in log to try to plot all the points in the graph, but it is clear that after the first drop in validation error that none of the error significantly changed for the better or worse, but made very marginal improvement, confirming the analysis above. The model number label on the x-axis essentially describes the separation of the three major sections of progress with regression, model 0 being the standard linear regression, model 1 being the ridge regression, and model 2 being the regression that has some polynomial features and recursive feature elimination applied to it.
 
-### Second Model - Decision Tree Regressor (Milestone 4) 
+### Second Model - Decision Tree Regressor 
 
-#### Part 3: Evaluate the Model
+#### Part 3: Observation
 
 We decided to use the gradient boosting regression model from the XGBoost library, as it performed slightly better than both the decision tree regressor and the random forest regressor.
 Our best gradient boosting model overfits slightly, with a training MSE of 68 and testing/validation MSE’s hovering in the mid-80’. However, as the result of an exhaustive grid search, we have confidence that these hyperparameters are pretty optimal, as they outperformed models that didn’t overfit and had similar training and testing errors. l Tweaking the “num_estimators” and “depth” hyperparameters had the largest impact on mitigating overfitting: we were able to bring the training MSE down to a single digit, at the cost of doubling our training/validation MSE’s by building an overly complex model with high depth.
 
-#### Part 4: Where does the model fit in the fitting graph?
+#### Fitting Graph
 
 ![Fitting Curve for Regression](images/XGBoost_plotting.png)
 
@@ -117,19 +146,13 @@ Our XGBoost model had training, testing, and validation errors were roughly 68.5
 
 ### Third Model - Dense Neural Networks (Milestone 5)
 
-
 ## E. Discussion
 
-### Data Exploration and Initial Preprocessing (Milestone 2)
+### Data Exploration and Initial Preprocessing
 
 
-### First Model - Regression (Milestone 3) 
+### First Model - Regression
 
-#### Results Analysis
-
-The difference in validation and training error in combination with extreme coefficient values was a clear sign of overfitting for the original linear regression model and a failure on the model’s part to understand the true importance of different features. We attempted to fix this issue by implementing a Ridge Regression to counter larger coefficients and reduce the error, which did in fact make a significant difference. However, when trying to make further improvement with polynomial data and feature elimination, there was not as much improvement as expected, perhaps since a lot of features do not actually make a huge impact on a user and thus would not effect the model whether the feature is included or not.
-
-In terms of where we are on the fitting graph with this model, we are on the left side before the ideal range for model complexity, with a simple model and high predictive errors. We also noticed that the validation error never seemed to increase at all as we increased the model complexity, further indicating that we were before the ideal range for model complexity.
 
 #### Conclusion and Next Steps 
 Upon exploring a Linear Regression model, we came to the conclusion that Linear Regression may not be sufficient for predicting Airbnb's review rating given our dataset. This is demonstrated in both our initial Linear Regression model and our improved reduced Ridge Regression Model. Although consistent, our final model still produced high error values, indicating it may not be accurately predicting the rating reviews as much as a model could be. 
