@@ -173,23 +173,15 @@ From these graphs, we can clearly see that for both models, the preliminary one 
 
 ### First Model - Regression
 
-
-#### Conclusion and Next Steps 
 Upon exploring a Linear Regression model, we came to the conclusion that Linear Regression may not be sufficient for predicting Airbnb's review rating given our dataset. This is demonstrated in both our initial Linear Regression model and our improved reduced Ridge Regression Model. Although consistent, our final model still produced high error values, indicating it may not be accurately predicting the rating reviews as much as a model could be. 
 
 One possible area of improvement for this regression model includes further investigation into the importance of each of the features and their relationships with each other to see what the best subset of features truly is to limit the error, but currently, it seems like most changes would not be significant for this model’s improvement and that it would most likely only make a small decrease.
 
-The next two models we are thinking of doing are decision regression trees and neural networks. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. These more complicated models have automatic feature learning and can recognize nonlinear relationships between data. Therefore, compared to a traditional regression model that performs well with linear data relationships, our future models may be able to recognize underlying patterns and fit the data more, thus decreasing the final error.
+The next two models we are thinking of doing are decision regression trees and neural networks. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. Compared to more complicated models that have automatic feature learning and can recognize nonlinear relationships between data, this traditional regression model may not be able to recognize underlying patterns or fit the data as well. 
 
 ### Second Model - Decision Tree Regressor 
 
-#### Part 6: Plan for the next model
-
-For our next model, we were planning to test various types of neural networks. We saw that several neural networks performed well on similar tasks in our recent homework, so we felt that it would be interesting to see if that translated to this task as well. We plan on starting out with a simple Multi-layer perceptron, then experimenting with ANN’s and DNN’s with varying depths, activation functions, and number of neurons.
-
-#### Part 7: Model 2 Conclusion
-
-Our second model only improved marginally upon our first model. This family of models – the trees – had a tendency to overfit on the training data, which made sense given the complexity of each of these models. We think that these different models performing relatively similar to one another is indicative of the variance in our dataset; people, and therefore AirBNB ratings, are inherently volatile. We think that there’s a possibility that more hyperparameter tuning can decrease the error slightly, but we’re not overly hopeful that this is the case given the similar performance across the board.
+Our second model only improved marginally upon our first model. Still, this family of models – the trees – had a tendency to overfit on the training data, which made sense given the complexity of each of these models. We think that these different models performing relatively similar to one another is indicative of the variance in our dataset; people, and therefore AirBNB ratings, are inherently volatile. We think that there’s a possibility that more hyperparameter tuning can decrease the error slightly, but we’re not overly hopeful that this is the case given the similar performance across the board.
 
 ### Third Model - Dense Neural Networks 
 
@@ -197,7 +189,30 @@ After exploring multiple Neural Network models, we came to the conclusion that N
 
 One possible improvement we could make is to increase max_trials for the hyperparameter tuning. Since we were restricted by time, we were not able to test all possible combinations during our hyperparameter tuning, so there may be more optimal combinations than the ones we tried. Additionally, we could also try running for more epochs during our hyperparameter tuning in order to get a better representation of each model. One pattern we noticed is that the models with higher learning_rates did a little better, but this may be due to the fact that they move towards the local minima faster than the models with lower learning_rates, which makes them appear more accurate in the short-run.
 
+### Final Model & Final Results Summary
+
+
 
 ## F. Conclusion
 
 After the entire process of working with this Airbnb data across three different models, we were able to successfully predict the ratings of different locations within 9-10%. That means we are able to typically predict with an error of half of a star which is pretty good. Surprisingly, it seems that the tree models were the best performing in completing this task, even above the neural networks. However, this still clearly demonstrates that there is still a lot of room for improvement to get even more accurate results. Given more time with the models we were working on, we may be able to implement more tactics to have better predictive power or do more hyperparameter tuning to have the best architecture available for the respective model types. One more thing to consider however is that since all three models tended to have the same loss as each other, it may also be more beneficial to have a deeper and more complex look into the data and try to find how some of the features truly effect the outcome and each other. There may also be bias into how the data was collected in the first place, like how the concentration of scores tend to be distributed and be heavily skewed positively, in which case we would need to look for other data to either supplement or replace the current data we were looking at. However, despite the different paths forward from here, we have still created a good model to be used for those looking to start putting a place up on Airbnb or for users to get an idea of what their experience may be like if there are not many reviews on the location yet!
+
+## Contributions:
+* Arvin Zhang:
+  * Title/Contribution:
+* Andrew Pu:
+  * Title/Contribution:
+* Andrew Zheng:
+  * Title/Contribution:
+* Brian Morse:
+  * Title/Contribution:
+* Joshua Chen:
+  * Title/Contribution:
+* Ethan Cao:
+  * Title/Contribution:
+* Jimmy Ying:
+  * Title/Contribution:
+* Justin Chou:
+  * Title/Contribution:
+* Rachel Wei:
+  * Title/Contribution: Group member, Contributed to the Abstract (Milestone 1), Data Preprocessing steps (Milestone 2), as well as the construction of Model 3 (Milestone 5), and the final writeup for the entire project (Milestone 5). Most significant contributions was in Milestone 5, specifically working with Andrew to create the initial model before hypertuning as well as the final writeup for the entire project, including reorganizing all the information to be cohesive and adding additional results, discussion, and conclusion as needed. In addition, worked on the Milestone 2 writeup.
