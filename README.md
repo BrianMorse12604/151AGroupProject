@@ -1,6 +1,10 @@
-# 151AGroupProject
+# Introduction to 151AGroupProject
 
-## Abstract
+The group members in this project are Rachel Wei (rawei@ucsd.edu), Andrew Pu (apu@ucsd.edu), Ethan Cao (etcao@ucsd.edu), idk everyone elses email im too lazy. This README will explain our 151A group project for Winter 2024. This README contains where to find all the code for this project, as well as the project itself: an introduction to the project, dataset used, a description of our data exploration, cleaning, and preprocessing, and the process for creating the 3 different ML models as well as a comparison between the 3. All the code for this project is uploaded as a jupyter notebook to this github, and will be linked throughout the readme when relevant. 
+
+# Project Writeup 
+
+## Introduction to Project (Project Abstract) 
 
 Airbnb is one of the largest short-term rental booking sites and a rental’s ratings can be instrumental in determining its profitability. As such, many hosts would like to know how a potential rental location may perform before they purchase it or how they can make improvements to current locations. Our goal is to create a predictive model that takes into account information about a rental location to predict the overall rating. We will use a regression model with features such as the number of rooms, the price of the listing, and the city of the listing that will predict the overall rating for the location. We will further process and transform the data to create new features in hopes of strengthening our predictions. We will explore various types of regression models including but not limited to linear regression, ridge regression, decision tree / random forests, and neural networks to determine which type of model best fits and predicts the data. By doing so, we hope to create a useful tool for hosts to use when making decisions about a listing.
 
