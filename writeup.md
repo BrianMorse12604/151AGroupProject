@@ -155,7 +155,15 @@ Our XGBoost model had training, testing, and validation errors were roughly 68.5
 #### Observation
 
 #### Fitting Graph
+Fitting graph for initial model before hypertuning:
+![Fitting graph for initial model (before hypertuning)](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/be96f751-320f-44bb-8107-6d000fb9d486)
 
+Fitting graph for model after hypertuning:
+![Fitting graph for Final Model (hypertuned model)](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e5472132-0299-4add-a81b-c0e810ad7f44)
+
+For this model, the we implemented early_stopping to avoid the issue of overfitting. Thus, the model stopped after only 23 epochs. Compared to the preliminary model before hypertuning, the validation_error was a little lower, going down to around 91.8 at its minimum before going back up and stopping. The testing error ended up being around 92.1, which is a little better than our model without hypertuning which had a  testing error of 93.3.
+
+From these graphs, we can clearly see that for both models, the preliminary one and our final one, the errors started pretty close to each other, but they gradually separated after that, with the training_error consistently decreasing and the validation_error leveling off or even increasing. Since we set restore_best_weights to True, the final testing_loss is pretty close the minimum validation_loss instead of the final validation_loss.
 
 ## E. Discussion
 
@@ -184,6 +192,9 @@ Our second model only improved marginally upon our first model. This family of m
 
 ### Third Model - Dense Neural Networks 
 
+After exploring multiple Neural Network models, we came to the conclusion that Neural Networks were not the most optimal models for predicting AirBNB reviews given our dataset. In both our preliminary model and our final model, the testing errors were much higher than they were in some of our other models, which suggests that these other models are performing better on the test data than our Dense Neural Networks.
+
+One possible improvement we could make is to increase max_trials for the hyperparameter tuning. Since we were restricted by time, we were not able to test all possible combinations during our hyperparameter tuning, so there may be more optimal combinations than the ones we tried. Additionally, we could also try running for more epochs during our hyperparameter tuning in order to get a better representation of each model. One pattern we noticed is that the models with higher learning_rates did a little better, but this may be due to the fact that they move towards the local minima faster than the models with lower learning_rates, which makes them appear more accurate in the short-run.
 
 
 ## F. Conclusion
