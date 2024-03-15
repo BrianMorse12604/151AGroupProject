@@ -30,12 +30,15 @@ This dataset uses a public domain license described here: [CC0: Public Domain](h
 The following figures 1.1, 1.2, 1.3 are for data visualization purposes, and to get a better sense of the data
 
 [Figure 1.1](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but gives the correlation between different features of the data.
+
 ![151a_correlation_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e985ecb3-a7f3-4d16-b394-caac5080e3e8)
 
 [Figure 1.2](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but compares price against rating for each location.
+
 ![151a_pricevshost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/e1840db3-7314-4cca-8765-731cb08437ce)
 
 [Figure 1.3](https://github.com/BrianMorse12604/151AGroupProject/edit/main/writeup.md#data-visualization): This figure is described more thoroughly at the link, but looks at the distribution of ratings based on whether the host is a host or superhost.
+
 ![151a_superhost_dataVis](https://github.com/BrianMorse12604/151AGroupProject/assets/40574565/69629b7b-9401-4762-8e7c-81d5118ccc1f)
 
 
@@ -292,7 +295,7 @@ Upon exploring a Linear Regression model, we came to the conclusion that Linear 
 
 One possible area of improvement for this regression model includes further investigation into the importance of each of the features and their relationships with each other to see what the best subset of features truly is to limit the error, but currently, it seems like most changes would not be significant for this model’s improvement and that it would most likely only make a small decrease.
 
-The next two models we are thinking of doing are decision regression trees and neural networks. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. Compared to more complicated models that have automatic feature learning and can recognize nonlinear relationships between data, this traditional regression model may not be able to recognize underlying patterns or fit the data as well. 
+The next two models we are doing are decision regression trees and neural networks. This is because those are two other common types of models that tend to do well with regression problems and may be able to overcome the challenges that a regression model can not. Compared to more complicated models that have automatic feature learning and can recognize nonlinear relationships between data, this traditional regression model may not be able to recognize underlying patterns or fit the data as well. 
 
 ### Second Model - Decision Tree Regressor 
 
@@ -316,7 +319,7 @@ After the entire process of working with this Airbnb data across three different
 * Andrew Zheng:
   * Title/Contribution:
 * Brian Morse:
-  * Title/Contribution:
+  * Title/Contribution: Group Member, Contributed to the abstract (Milestone 1), Data Preprocessing steps (Milestone 2), creation of model 1/write up (Milestone 3), and some work with final readme (Milestone 5). For the abstract, was part of choosing the dataset and some of the planning. For data preprocessing, main contribution was figuring out how to process the amenities column as well as other small changes. Was one of the team of three to work on the linear regression model code and write up. Helped make some smaller adjustments to fit the final format of the readme, largest contribution for this segment was the conclusion.
 * Joshua Chen:
   * Title/Contribution:
 * Ethan Cao:
