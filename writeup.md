@@ -166,6 +166,12 @@ Fitting graph for model after hypertuning:
 
 From these graphs, we can clearly see that for both models, the preliminary one and our final one, the errors started pretty close to each other, but they gradually separated after that, with the training_error consistently decreasing and the validation_error leveling off or even increasing. Since we set restore_best_weights to True, the final testing_loss is pretty close the minimum validation_loss instead of the final validation_loss.
 
+### Final Model & Final Results Summary
+
+Final Model: Model 2, Decision Tree Regressor
+
+Out of the 3 models, we determined that Model 2, a decision tree regressor, performed the best. The Decision Tree Regressor had a testing error of 86.3 and validation error of 84.8, both of which were lower than the other testing and validation errors from our other two models. Model 1 (Regressor) had a testing error of 90.6 and validation error of 88.1. Model 3 (DNN) had a testing error of 92.1 and validation error of 91.8. Note that these errors are mse, which means that on average our models predicted around 10 points off of the actual review rating (review ratings are out of 100).
+
 ## E. Discussion
 
 ### Data Exploration and Initial Preprocessing
@@ -188,10 +194,6 @@ Our second model only improved marginally upon our first model. Still, this fami
 After exploring multiple Neural Network models, we came to the conclusion that Neural Networks were not the most optimal models for predicting AirBNB reviews given our dataset. In both our preliminary model and our final model, the testing errors were much higher than they were in some of our other models, which suggests that these other models are performing better on the test data than our Dense Neural Networks.
 
 One possible improvement we could make is to increase max_trials for the hyperparameter tuning. Since we were restricted by time, we were not able to test all possible combinations during our hyperparameter tuning, so there may be more optimal combinations than the ones we tried. Additionally, we could also try running for more epochs during our hyperparameter tuning in order to get a better representation of each model. One pattern we noticed is that the models with higher learning_rates did a little better, but this may be due to the fact that they move towards the local minima faster than the models with lower learning_rates, which makes them appear more accurate in the short-run.
-
-### Final Model & Final Results Summary
-
-
 
 ## F. Conclusion
 
