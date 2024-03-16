@@ -1,6 +1,6 @@
 # 151AGroupProject
 
-The group members in this project are Rachel Wei (rawei@ucsd.edu), Andrew Pu (apu@ucsd.edu), Ethan Cao (etcao@ucsd.edu), idk everyone elses email im too lazy.
+The group members in this project are Rachel Wei (rawei@ucsd.edu), Andrew Pu (apu@ucsd.edu), Ethan Cao (etcao@ucsd.edu), Andrew Zheng (a5zheng@ucsd.edu), Jimmy Ying, (jyling@ucsd.edu)idk everyone elses email im too lazy.
 
 This README will explain our 151A group project for Winter 2024. This README contains where to find all the code for this project, as well as the project itself: an introduction to the project, dataset used, a description of our data exploration, cleaning, and preprocessing, and the process for creating the 3 different ML models as well as a comparison between the 3. All the code for this project is uploaded as a jupyter notebook to this github, and will be linked throughout the readme when relevant.
 
@@ -201,7 +201,7 @@ After the entire process of working with this Airbnb data across three different
 
 ## Contributions:
 * Arvin Zhang:
-  * Title/Contribution:
+  * Title/Contribution: Group member, contributed to the second model (Milestone 4). In Milestone 4, I worked with Justin Chou and Jimmy Ying to find the best Decision Tree Regressor model. I personally worked on training the DecisionTreeRegressor model and helped test and write up the analysis for the entire milestone 4.
 * Andrew Pu:
   * Title/Contribution:
 * Andrew Zheng:
