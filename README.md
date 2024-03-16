@@ -315,7 +315,7 @@ After the entire process of working with this Airbnb data across three different
 * Arvin Zhang:
   * Title/Contribution: Group Member, Contributed to the abstract (Milestone 1), Data preprocessing steps (Milestone 2), and analysis/write up of Model 1 (Milestone 3). In the abstract, helped select dataset and summarize data. Most significant contributions in the data preprocessing step includes normalizing the data, visualizing the data, and removing select possible outliers during the data preprocessing steps. Finally, worked with Brian and Josh to analyze and draw conclusions on Model 1's performance. 
 * Andrew Pu:
-  * Title/Contribution:
+  * Title/Contribution: Group Member, Contributed to the data exploration and initial preprocessing steps (Milestone 2), development and analysis of Model 3 (Milestone 5), and some work on the final readme (Milestone 5). Created models to visualize the relations between features and to identify useful features to use in our models. For model 3, worked on creating the dense neural network model and hypertuning the parameters, as well as creating most of the writeup for model 3, including the analysis and conclusion portions. Worked with Rachel Wei to explain development process of model 3 in the final readme.
 * Andrew Zheng:
   * Title/Contribution:
 * Brian Morse:
