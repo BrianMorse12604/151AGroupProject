@@ -154,17 +154,28 @@ decision_tree_model=DecisionTreeRegressor()
 decision_tree_model.fit(X_train,y_train)
 ```
 
-#### Hyperparameter tuning, K-fold cross-validation, feature expansion
-
-We did not perform feature expansion, as we felt confident that our feature engineering in the preprocessing stage was effective. We did perform both hyperparameter tuning and K-Fold cross validation using the GridSearchCV function. Though the grid search did find slightly more optimal errors in comparison to our models without hyperparameter tuning, we weren’t blown away by the results. 
-
-We ran trials using a different number of folds during our grid search, and found that the difference in results was only marginal, while each search took an order of magnitude longer. Therefore, we opted to gridsearch with only two folds each time we used it, using the second fold to sanity-check the results of the first. 
-
 ```python
 rf = RandomForestRegressor()
 grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=3, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
 grid_search.fit(X_train, y_train)
 ```
+
+```python
+xgbmodel = xgb.XGBRegressor(learning_rate= 0.1, max_depth= 7, n_estimators= 200, 
+                         colsample_bytree= 0.7, subsample = 0.9, gamma=0)
+xgbmodel.fit(
+    X_train, y_train, 
+    eval_set=[(X_train, y_train), (X_test,y_test), (X_val, y_val)], 
+    eval_metric="rmse", 
+    verbose=False
+)
+```
+
+#### Hyperparameter tuning, K-fold cross-validation, feature expansion
+
+We did not perform feature expansion, as we felt confident that our feature engineering in the preprocessing stage was effective. We did perform both hyperparameter tuning and K-Fold cross validation using the GridSearchCV function. Though the grid search did find slightly more optimal errors in comparison to our models without hyperparameter tuning, we weren’t blown away by the results. 
+
+We ran trials using a different number of folds during our grid search, and found that the difference in results was only marginal, while each search took an order of magnitude longer. Therefore, we opted to gridsearch with only two folds each time we used it, using the second fold to sanity-check the results of the first. 
 
 ### Third Model - Dense Neural Networks (Milestone 5)
 
