@@ -348,7 +348,7 @@ After the entire process of working with this Airbnb data across three different
 * Ethan Cao:
   * Title/Contribution: Group Member, Contributed to the abstract (Milestone 1), Data Preprocessing steps (Milestone 2), and Model 3 and writeup (Milestone 5). In the abstract, helped determine the dataset. In the data preprocessing, developed graphs to be submitted. In model 3 and writeup, wrote parts of the discussion section, formatted the write-up and added coding sections to make the write up presentable. Also helped develop the initial DNN model.
 * Jimmy Ying:
-  * Title/Contribution:
+  * Title/Contribution: Group member, Contributed to the abstract (Milestone 1), Data preprocessing steps (Milestone 2), and the design/writeup of model 2 (Milestone 4). For the abstract, I helped find alternate data sets, as well as suggested to use unrelated datasets such as crime rates and average rent in neighborhood as part of our project. For data preprocessing, I visualized a few fields of data, as well as standardized the prices of the lisings to USD by scaling by the value of the currency of the country they were located. For model 2, I experimented with multiple gradient boosting models, performing a grid search on each and analyzing their results.
 * Justin Chou:
   * Title/Contribution: Group member, contributed to the data cleaning / EDA (Milestone 1) and the second model (Milestone 4). In Milestone 1, he did the initial feature analysis and missing value imputation / dropping. In milestone 4, he worked with Andrew Z and Jimmy on the second model, with each of them testing one of the three models (decision tree, random forest, xgboost) and contributing to the write-up.
 * Rachel Wei:
