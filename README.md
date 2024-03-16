@@ -340,7 +340,7 @@ After the entire process of working with this Airbnb data across three different
 * Andrew Pu:
   * Title/Contribution: Group Member, Contributed to the data exploration and initial preprocessing steps (Milestone 2), development and analysis of Model 3 (Milestone 5), and some work on the final readme (Milestone 5). Created models to visualize the relations between features and to identify useful features to use in our models. For model 3, worked on creating the dense neural network model and hypertuning the parameters, as well as creating most of the writeup for model 3, including the analysis and conclusion portions. Worked with Rachel Wei to explain development process of model 3 in the final readme.
 * Andrew Zheng:
-  * Title/Contribution:
+  * Title/Contribution: Group member, contributed to the second model (Milestone 4). In Milestone 4, I worked with Justin Chou and Jimmy Ying to find the best Decision Tree Regressor model. I personally worked on training the DecisionTreeRegressor model and helped test and write up the analysis for the entire milestone 4.
 * Brian Morse:
   * Title/Contribution: Group Member, Contributed to the abstract (Milestone 1), Data Preprocessing steps (Milestone 2), creation of model 1/write up (Milestone 3), and some work with final readme (Milestone 5). For the abstract, was part of choosing the dataset and some of the planning. For data preprocessing, main contribution was figuring out how to process the amenities column as well as other small changes. Was one of the team of three to work on the linear regression model code and write up. Helped make some smaller adjustments to fit the final format of the readme, largest contribution for this segment was the conclusion. 
 * Joshua Chen:
