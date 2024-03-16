@@ -152,12 +152,20 @@ We began with decision tree regressors and random forest regressors. We then use
 ```python
 decision_tree_model=DecisionTreeRegressor()
 decision_tree_model.fit(X_train,y_train)
+
+---
+Training Error: 91.1911685186354
+Validation Error: 88.58676438078393
 ```
 
 ```python
 rf = RandomForestRegressor()
 grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=3, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
 grid_search.fit(X_train, y_train)
+
+---
+Training Error: 51.40654148536753
+Validation Error: 85.22374474058464
 ```
 
 ```python
@@ -169,6 +177,10 @@ xgbmodel.fit(
     eval_metric="rmse", 
     verbose=False
 )
+
+---
+Training Error: 68.50379526455089
+Validation Error: 84.80189967469147
 ```
 
 #### Hyperparameter tuning, K-fold cross-validation, feature expansion
