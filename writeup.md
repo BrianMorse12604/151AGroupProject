@@ -201,11 +201,11 @@ After the entire process of working with this Airbnb data across three different
 
 ## Contributions:
 * Arvin Zhang:
-  * Title/Contribution: Group member, contributed to the second model (Milestone 4). In Milestone 4, I worked with Justin Chou and Jimmy Ying to find the best Decision Tree Regressor model. I personally worked on training the DecisionTreeRegressor model and helped test and write up the analysis for the entire milestone 4.
+  * Title/Contribution: 
 * Andrew Pu:
   * Title/Contribution:
 * Andrew Zheng:
-  * Title/Contribution:
+  * Title/Contribution: Group member, contributed to the second model (Milestone 4). In Milestone 4, I worked with Justin Chou and Jimmy Ying to find the best Decision Tree Regressor model. I personally worked on training the DecisionTreeRegressor model and helped test and write up the analysis for the entire milestone 4.
 * Brian Morse:
   * Title/Contribution:
 * Joshua Chen:
