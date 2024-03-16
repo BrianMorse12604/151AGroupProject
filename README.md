@@ -327,6 +327,6 @@ After the entire process of working with this Airbnb data across three different
 * Jimmy Ying:
   * Title/Contribution:
 * Justin Chou:
-  * Title/Contribution:
+  * Title/Contribution: Group member, contributed to the data cleaning / EDA (Milestone 1) and the second model (Milestone 4). In Milestone 1, he did the initial feature analysis and missing value imputation / dropping. In milestone 4, he worked with Andrew Z and Jimmy on the second model, with each of them testing one of the three models (decision tree, random forest, xgboost) and contributing to the write-up.
 * Rachel Wei:
   * Title/Contribution: Group member, Contributed to the Abstract (Milestone 1), Data Preprocessing steps (Milestone 2), as well as the construction of Model 3 (Milestone 5), and the final writeup for the entire project (Milestone 5). Most significant contributions was in Milestone 5, specifically working with Andrew to create the initial model before hypertuning as well as the final writeup for the entire project, including reorganizing all the information to be cohesive and adding additional results, discussion, and conclusion as needed. In addition, worked on the Milestone 2 writeup.
